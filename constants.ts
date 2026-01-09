@@ -10,15 +10,14 @@ export const PORTFOLIO_DATA: PortfolioData = {
     { label: "Skills", href: "#skills" },
     { label: "Projects", href: "#projects" },
     { label: "Certifications", href: "#certifications" },
-    { label: "Contact", href: "#contact" },
   ],
   hero: {
     headline: "Anthony Alabado",
     subHeadline: "Frontend Web Developer",
     bio: "I am a dedicated web developer focusing on front-end development specializing in ReactJS and Tailwind CSS. I am well-versed in web development architecture and have a thorough understanding of how to integrate front-end interfaces with back-end systems.",
     actions: {
-      primary: { label: "View Projects", url: "#projects" },
-      secondary: { label: "Download Resume", url: "#" },
+      primary: { label: "Download Resume", url: "#" },
+      secondary: { label: "Contact Me", url: "mailto:anthony.alabado@example.com" },
     },
   },
   about: {
