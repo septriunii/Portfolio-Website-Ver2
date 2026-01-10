@@ -31,8 +31,8 @@ const Navbar: React.FC = () => {
           
           {/* Logo Section */}
           <div className="flex items-center gap-2">
-            <Terminal className="h-6 w-6 text-node-primary" />
-            <span className="font-bold text-lg tracking-tight text-white">
+            <Terminal className="h-5 w-5 text-node-primary" />
+            <span className="font-extrabold text-lg tracking-tighter text-white">
               {meta.title}
             </span>
           </div>
@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
                   key={link.label}
                   href={link.href}
                   onClick={(e) => handleScroll(e, link.href)}
-                  className="text-gray-300 hover:text-node-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer"
+                  className="text-gray-300 hover:text-node-primary px-3 py-2 rounded-md text-sm font-bold tracking-tight transition-colors duration-200 cursor-pointer"
                 >
                   {link.label}
                 </a>
@@ -75,7 +75,7 @@ const Navbar: React.FC = () => {
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleScroll(e, link.href)}
-                className="text-gray-300 hover:text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium cursor-pointer"
+                className="text-gray-300 hover:text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-bold tracking-tight cursor-pointer"
               >
                 {link.label}
               </a>

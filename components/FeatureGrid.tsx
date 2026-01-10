@@ -4,14 +4,14 @@ import { Layout, Server, Cloud, Cpu, Database, Globe, Box, Code, Award, External
 
 // Icon mapper
 const IconMap: Record<string, React.ReactNode> = {
-  Layout: <Layout className="h-8 w-8" />,
-  Server: <Server className="h-8 w-8" />,
-  Cloud: <Cloud className="h-8 w-8" />,
-  Cpu: <Cpu className="h-8 w-8" />,
-  Database: <Database className="h-8 w-8" />,
-  Globe: <Globe className="h-8 w-8" />,
-  Box: <Box className="h-8 w-8" />,
-  Code: <Code className="h-8 w-8" />,
+  Layout: <Layout className="h-full w-full" />,
+  Server: <Server className="h-full w-full" />,
+  Cloud: <Cloud className="h-full w-full" />,
+  Cpu: <Cpu className="h-full w-full" />,
+  Database: <Database className="h-full w-full" />,
+  Globe: <Globe className="h-full w-full" />,
+  Box: <Box className="h-full w-full" />,
+  Code: <Code className="h-full w-full" />,
 };
 
 const FeatureGrid: React.FC = () => {
@@ -21,58 +21,58 @@ const FeatureGrid: React.FC = () => {
     <div className="w-full">
       
       {/* About Section */}
-      <div id="about" className="py-20 px-8 sm:px-12 bg-[#1f1f1f] border-b border-node-border">
-        <div className="max-w-2xl mx-auto">
-          <div className="flex items-center gap-3 mb-6">
-             <User className="h-8 w-8 text-node-primary" />
-             <h2 className="text-3xl font-bold text-white">
+      <section id="about" className="py-20 sm:py-32 px-6 sm:px-12 bg-[#1c1c1c] border-b border-node-border w-full">
+        <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
+          <div className="flex flex-col items-center mb-10">
+             <User className="h-8 w-8 text-node-primary mb-4" />
+             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
               {about.title}
             </h2>
           </div>
           
-          <div className="space-y-6 text-gray-300 leading-relaxed text-lg">
+          <div className="space-y-6 text-gray-400 leading-relaxed text-lg font-medium">
             {about.paragraphs.map((paragraph, idx) => (
               <p key={idx}>{paragraph}</p>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Skills Section */}
-      <div id="skills" className="py-20 px-8 sm:px-12 bg-node-bg border-b border-node-border">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold text-center md:text-left text-white mb-4">
+      <section id="skills" className="py-20 sm:py-32 px-6 sm:px-12 bg-node-bg border-b border-node-border w-full">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-2">
             Technical Skills
           </h2>
-          <p className="text-center md:text-left text-gray-400 mb-12">
+          <p className="text-gray-500 mb-12 text-lg font-medium">
             My core technology stack and expertise.
           </p>
           
-          <div className="grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 xs:grid-cols-3 gap-4 sm:gap-6">
             {skills.map((skill, idx) => (
               <div
                 key={idx}
-                className="bg-node-card border border-node-border rounded-md p-4 flex flex-col items-center text-center hover:border-node-primary transition-colors duration-200 group"
+                className="bg-node-card border border-node-border rounded-xl p-6 flex flex-col items-center text-center hover:border-node-primary/30 transition-all duration-300 group hover:bg-node-primary/5"
               >
-                <div className="text-node-primary mb-3 group-hover:scale-110 transition-transform duration-300">
-                  {IconMap[skill.icon] || <Code className="h-6 w-6" />}
+                <div className="w-8 h-8 text-node-primary/80 mb-4 group-hover:scale-110 group-hover:text-node-primary transition-all duration-300">
+                  {IconMap[skill.icon] || <Code className="h-full w-full" />}
                 </div>
-                <h3 className="text-sm font-semibold text-gray-200">
+                <h3 className="text-sm sm:text-base font-bold tracking-tight text-gray-300 group-hover:text-white transition-colors">
                   {skill.name}
                 </h3>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Projects Section */}
-      <div id="projects" className="py-20 px-8 sm:px-12 bg-[#1f1f1f] border-b border-node-border">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold text-center md:text-left text-white mb-4">
+      <section id="projects" className="py-20 sm:py-32 px-6 sm:px-12 bg-[#1c1c1c] border-b border-node-border w-full">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-2">
             Featured Projects
           </h2>
-          <p className="text-center md:text-left text-gray-400 mb-12">
+          <p className="text-gray-500 mb-12 text-lg font-medium">
              Recent work showcasing web architecture and design.
           </p>
 
@@ -80,23 +80,22 @@ const FeatureGrid: React.FC = () => {
             {projects.map((project, idx) => (
               <div
                 key={idx}
-                className="bg-node-card border border-node-border rounded-lg p-8 hover:shadow-[0_4px_14px_0_rgba(51,153,51,0.2)] transition-all duration-300 flex flex-col relative overflow-hidden group"
+                className="bg-node-card border border-node-border rounded-2xl p-8 sm:p-10 hover:shadow-[0_8px_30px_0_rgba(249,115,22,0.1)] transition-all duration-300 flex flex-col items-center relative overflow-hidden group"
               >
-                {/* Green top bar accent */}
-                <div className="absolute top-0 left-0 w-full h-1 bg-node-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-node-primary/40 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center"></div>
                 
-                <h3 className="text-xl font-bold text-white group-hover:text-node-primary transition-colors mb-2">
+                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white group-hover:text-node-primary transition-colors mb-4">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 mb-4 leading-relaxed text-sm">
+                <p className="text-gray-400 mb-8 leading-relaxed text-lg font-medium">
                   {project.description}
                 </p>
                 
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap justify-center gap-2 mb-8">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2 py-1 bg-[#1a1a1a] text-xs font-mono text-node-muted rounded border border-gray-700"
+                      className="px-3 py-1 bg-black/30 text-xs font-bold uppercase tracking-wider text-node-muted rounded-full border border-white/5"
                     >
                       {tag}
                     </span>
@@ -104,23 +103,23 @@ const FeatureGrid: React.FC = () => {
                 </div>
                 <a
                   href={project.link}
-                  className="inline-flex items-center text-sm font-bold text-white hover:text-node-primary transition-colors uppercase tracking-wide"
+                  className="inline-flex items-center text-sm font-black text-gray-400 hover:text-node-primary transition-colors uppercase tracking-widest mt-auto border-b border-transparent hover:border-node-primary pb-1"
                 >
-                  View Source <code className="ml-2 bg-[#1a1a1a] px-1 text-xs rounded border border-gray-700">&gt;_</code>
+                  Explore Project <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Certifications Section */}
-      <div id="certifications" className="py-20 px-8 sm:px-12 bg-node-bg">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold text-center md:text-left text-white mb-4">
+      <section id="certifications" className="py-20 sm:py-32 px-6 sm:px-12 bg-node-bg w-full">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-2">
             Certifications
           </h2>
-          <p className="text-center md:text-left text-gray-400 mb-12">
+          <p className="text-gray-500 mb-12 text-lg font-medium">
             Continuous learning and professional verification.
           </p>
 
@@ -128,24 +127,24 @@ const FeatureGrid: React.FC = () => {
             {certifications.map((cert, idx) => (
               <div
                 key={idx}
-                className="bg-node-card border border-node-border rounded-lg p-6 flex items-start sm:items-center justify-between hover:border-node-primary transition-colors group"
+                className="bg-node-card border border-node-border rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between hover:border-node-primary/20 transition-all group gap-4"
               >
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#1a1a1a] p-3 rounded-full border border-node-border text-node-primary">
+                <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+                  <div className="bg-black/20 p-3 rounded-full border border-node-border text-node-primary/60 group-hover:text-node-primary transition-colors">
                     <Award className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-white group-hover:text-node-primary transition-colors">
+                    <h3 className="text-lg font-bold tracking-tight text-white group-hover:text-node-primary transition-colors leading-snug">
                       {cert.name}
                     </h3>
-                    <p className="text-sm text-gray-400">
+                    <p className="text-sm text-gray-500 mt-1 font-medium">
                       {cert.issuer} • {cert.date}
                     </p>
                   </div>
                 </div>
                 
                 {cert.link && (
-                  <a href={cert.link} className="hidden sm:block text-gray-500 hover:text-white transition-colors">
+                  <a href={cert.link} className="text-gray-500 hover:text-white transition-colors p-2 hidden sm:block">
                     <ExternalLink className="h-5 w-5" />
                   </a>
                 )}
@@ -153,7 +152,7 @@ const FeatureGrid: React.FC = () => {
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
     </div>
   );

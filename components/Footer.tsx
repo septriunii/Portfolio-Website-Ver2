@@ -12,47 +12,40 @@ const Footer: React.FC = () => {
   const { footer, navLinks } = PORTFOLIO_DATA;
 
   return (
-    <footer className="bg-node-header border-t border-node-border mt-12">
-      <div className="max-w-5xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+    <footer className="bg-node-header border-t border-node-border w-full">
+      <div className="max-w-3xl mx-auto py-20 px-6 sm:px-12 text-center">
+        <div className="flex flex-col items-center gap-10">
           
           {/* Brand/Copyright */}
-          <div className="col-span-1">
-            <span className="text-xl font-bold text-white tracking-tight">
-               Portfolio<span className="text-node-primary">.js</span>
+          <div>
+            <span className="text-2xl font-bold text-white tracking-tight">
+               Anton<span className="text-node-primary">.dev</span>
             </span>
-            <p className="mt-4 text-gray-400 text-sm">
+            <p className="mt-4 text-gray-400 text-sm leading-relaxed max-w-sm">
               {footer.copyright}
             </p>
           </div>
 
           {/* Quick Links */}
-          <div className="col-span-1">
-             <h3 className="text-sm font-semibold text-gray-200 tracking-wider uppercase mb-4">
-               Navigation
-             </h3>
-             <ul className="space-y-3">
-                {navLinks.map(link => (
-                    <li key={link.label}>
-                        <a href={link.href} className="text-base text-gray-400 hover:text-white transition-colors">
-                            {link.label}
-                        </a>
-                    </li>
-                ))}
-             </ul>
-          </div>
+          <nav className="flex flex-wrap justify-center gap-x-8 gap-y-4">
+            {navLinks.map(link => (
+                <a key={link.label} href={link.href} className="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-node-primary transition-colors">
+                    {link.label}
+                </a>
+            ))}
+          </nav>
 
           {/* Socials */}
-          <div className="col-span-1">
-            <h3 className="text-sm font-semibold text-gray-200 tracking-wider uppercase mb-4">
+          <div className="flex flex-col items-center">
+            <h3 className="text-xs font-semibold text-gray-500 tracking-[0.3em] uppercase mb-6">
               Connect
             </h3>
-            <div className="flex space-x-6">
+            <div className="flex space-x-8">
               {footer.socials.map((social) => (
                 <a
                   key={social.platform}
                   href={social.url}
-                  className="text-gray-400 hover:text-node-primary transition-colors"
+                  className="text-gray-400 hover:text-node-primary transition-all duration-300 hover:scale-125"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -64,9 +57,9 @@ const Footer: React.FC = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-800 pt-8 text-center">
-            <p className="text-xs text-gray-500">
-                Designed to mimic nodejs.org. Built with React & Tailwind.
+        <div className="border-t border-white/5 mt-16 pt-8">
+            <p className="text-[10px] sm:text-xs text-gray-500 uppercase tracking-[0.2em]">
+                Designed with Node.js Aesthetics • v1.0.0 Stable
             </p>
         </div>
       </div>

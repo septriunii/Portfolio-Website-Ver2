@@ -3,8 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alex Dev | Software Engineer</title>
-    <meta name="description" content="Personal portfolio mimicking Node.js design." />
+    <title>Anthony Alabado | Frontend Developer</title>
+    <meta name="description" content="Personal portfolio mimicking Node.js design with a vibrant orange aesthetic." />
+    <!-- Importing Inter font for the requested clean, high-end typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -15,15 +19,15 @@
                 bg: '#1a1a1a',      // Main background
                 card: '#242424',    // Card background
                 header: '#333333',  // Header/Footer bg
-                primary: '#6CC24A', // Node Green (Lighter/Vibrant)
-                primaryDark: '#4E9A36', // Node Green Hover
+                primary: '#f97316', // Vibrant Orange from screenshot
+                primaryDark: '#ea580c', // Darker Orange Hover
                 text: '#ffffff',    // Main text
                 muted: '#9CA3AF',   // Muted text
-                border: '#444444'   // Subtle borders
+                border: '#262626'   // Darkened border for subtle transitions
               }
             },
             fontFamily: {
-              sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+              sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
             }
           }
         }
@@ -36,6 +40,9 @@
         overflow: hidden; /* Critical: prevents window scrolling */
         margin: 0;
         padding: 0;
+        /* Improving font rendering for Inter */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
       /* Custom Scrollbar for the scrollable panel */
       ::-webkit-scrollbar {
@@ -45,11 +52,11 @@
         background: #1a1a1a;
       }
       ::-webkit-scrollbar-thumb {
-        background: #444;
+        background: #333;
         border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #6CC24A;
+        background: #f97316;
       }
     </style>
   <script type="importmap">
